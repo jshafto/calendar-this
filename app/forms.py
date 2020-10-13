@@ -15,10 +15,10 @@ class AppointmentForm(FlaskForm):
   description = TextAreaField('Description', validators=[DataRequired()])
   private = BooleanField('Private')
   submit = SubmitField('Submit')
-  def validate_end_date(form, field):
-    start = datetime.combine(form.start_date.data, form.start_time.data),
-    end = datetime.combine(field.data, form.end_time.data),
+  def validate_end_date(self, field):
+    start = datetime.combine(self.start_date.data, self.start_time.data),
+    end = datetime.combine(field.data, self.end_time.data),
     if start >= end:
-        raise ValidationError("End date/time must come after start date/time")
-    if not form.start_date.data == field.data:
-        raise ValidationError("End date must the be the same as start date")
+      raise ValidationError("End date/time must come after start date/time")
+    if not self.start_date.data == field.data:
+      raise ValidationError("End date must the be the same as start date")
