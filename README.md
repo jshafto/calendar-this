@@ -10,7 +10,7 @@ _Calendar This_ is a data-driven calendar app to manage appointments, using Flas
 - [x] Appointment page
 - [x] Form for creating new appointments
 - [x] Form validation and helper text
-- [ ] Show appointments by day
+- [x] Show appointments by day
 - Strech goals
   - [ ] Allow user to change day
   - [ ] Improve calendar visualizations
